@@ -1,0 +1,1 @@
+export { TableContacts } from "./container";

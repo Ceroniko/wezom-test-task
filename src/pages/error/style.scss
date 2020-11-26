@@ -1,0 +1,22 @@
+.page--errorPage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .ant-result-title{
+        font-family: Arial,sans-serifs;
+        font-size: 80px;
+        font-weight: 900;
+        color: #db402c;
+        p{
+            margin: 0;
+        }
+    }
+
+    .ant-result-subtitle{
+        font-family: Arial,sans-serifs;
+        color: #333;
+    font-size: 26px;
+    font-weight: 500;
+    }
+}

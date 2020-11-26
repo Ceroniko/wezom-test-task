@@ -1,0 +1,1 @@
+export { PageContactProfile } from "./container";

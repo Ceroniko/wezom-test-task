@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "wezom-test-task",
+    "wezom-test-task": "wezom-test-task"
+  }
+}
