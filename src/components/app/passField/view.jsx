@@ -17,7 +17,7 @@ const View = ({ input }) => {
 					message: "The password must be at least 8 characters.",
 				},
 				{
-					pattern: /^([a-z][A-Z]+)$/i,
+					pattern: /^[A-Za-z0-9.-_]+$/i,
 					message: "The password format is invalid.",
 				},
 			]}
