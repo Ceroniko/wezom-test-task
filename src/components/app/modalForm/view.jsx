@@ -26,7 +26,7 @@ const View = (props) => {
 		localStorage.setItem("auth", props.email.values.email);
 		setTimeout(() => {
 			history.push("/profile");
-		}, 300);
+		}, 500);
 	};
 
 	return (

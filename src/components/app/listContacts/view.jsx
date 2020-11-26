@@ -120,8 +120,10 @@ const View = (props) => {
 					props.dispatchPage(page);
 				},
 				current: props.current,
-				pageSize: 6,
+				defaultPageSize: 6,
 				size: "small",
+				showSizeChanger: true,
+				pageSizeOptions: [6, 12, 18, 24],
 			}}
 		/>
 	);
