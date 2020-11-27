@@ -249,10 +249,11 @@ const View = (props) => {
 			dataSource={data}
 			loading={props.fetching}
 			pagination={{
-				onChange: (page) => {
-					props.dispatchPage(page);
+				onChange: (page, size) => {
+					props.dispatchPage(page, size);
 				},
 				current: props.current,
+				pageSize: props.pageSize,
 				size: "small",
 			}}
 			size="small"

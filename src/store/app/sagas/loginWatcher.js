@@ -11,7 +11,7 @@ function* loginWorker({ email }) {
 		const payload = yield call(fetchUser, email);
 		yield put(requestSuccess(payload.results[0]));
 	} catch (e) {
-		yield put(requestFailure(e));
+		yield put(requestFailure(true));
 	}
 }
 

@@ -6,7 +6,7 @@ import {
 } from "../types";
 
 const initialState = {
-	error: "",
+	error: false,
 	user: "",
 	fetching: false,
 	logined: !!localStorage.getItem("auth"),
@@ -18,7 +18,7 @@ export function authentication(state = initialState, action) {
 			return {
 				...state,
 				fetching: true,
-				error: "",
+				error: false,
 			};
 		case USER_LOGIN_SUCCESS:
 			return {
@@ -26,7 +26,7 @@ export function authentication(state = initialState, action) {
 				user: action.payload,
 				fetching: false,
 				logined: true,
-				error: "",
+				error: false,
 			};
 		case USER_LOGIN_FAILURE:
 			return {
@@ -39,7 +39,6 @@ export function authentication(state = initialState, action) {
 				...state,
 				email: "",
 				logined: false,
-				error: "",
 			};
 		default:
 			return state;

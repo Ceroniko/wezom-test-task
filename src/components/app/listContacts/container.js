@@ -8,12 +8,14 @@ const mapStateToProps = (state) => {
 		dataSource: state.contacts.contact.results,
 		fetching: state.contacts.fetching,
 		current: state.contactState.currentList,
+		pageSize: state.contactState.pageSizeList,
 	};
 };
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		dispatchPage: (value) => dispatch(updateListState(value)),
+		dispatchPage: (current, size) =>
+			dispatch(updateListState(current, size)),
 	};
 };
 

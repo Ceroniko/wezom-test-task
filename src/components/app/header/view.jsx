@@ -1,16 +1,28 @@
 import "./style.scss";
 import React from "react";
-import { Col, Row } from "antd";
+import { Col, Row, notification } from "antd";
 import { Logo } from "../logo";
 import { NavBar } from "../navbar";
 import { UserMenu } from "../userMenu";
 import { ModalForm } from "../modalForm";
 import { randomIntegerInRange } from "../../../utils/random";
+import { useHistory } from "react-router-dom";
 
 const View = (props) => {
-	if (!props.name && !props.contact && props.logined) {
-		props.dispatchLogin(localStorage.getItem("auth"));
-		props.dispatchContacts(randomIntegerInRange(1, 1500));
+	let history = useHistory();
+
+	if (!props.name && !props.contact.length && props.logined) {
+		if (props.error) {
+			localStorage.removeItem("auth");
+			props.dispatchLogout();
+			history.push("/");
+			notification.error({
+				message: "TypeError: Failed to fetch",
+			});
+		} else {
+			props.dispatchLogin(localStorage.getItem("auth"));
+			props.dispatchContacts(randomIntegerInRange(1, 1500));
+		}
 	}
 
 	return (

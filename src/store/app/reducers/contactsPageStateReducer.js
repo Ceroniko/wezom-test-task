@@ -11,7 +11,9 @@ const initialState = {
 	nat: undefined,
 	creator: false,
 	currentTable: 1,
+	pageSizeTable: 10,
 	currentList: 1,
+	pageSizeList: 6,
 };
 
 export function contactState(state = initialState, action) {
@@ -28,11 +30,13 @@ export function contactState(state = initialState, action) {
 			return {
 				...state,
 				currentTable: action.current,
+				pageSizeTable: action.pageSize,
 			};
 		case UPDATE_LIST_STATE:
 			return {
 				...state,
 				currentList: action.current,
+				pageSizeList: action.pageSize,
 			};
 		case DELETE_PAGE_STATE:
 			return {

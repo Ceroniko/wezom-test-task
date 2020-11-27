@@ -9,12 +9,12 @@ export function updateFormState(fullname, gender, nat, creator) {
 	return { type: UPDATE_FORM_STATE, fullname, gender, nat, creator };
 }
 
-export function updateTableState(current) {
-	return { type: UPDATE_TABLE_STATE, current };
+export function updateTableState(current, pageSize) {
+	return { type: UPDATE_TABLE_STATE, current, pageSize };
 }
 
-export function updateListState(current) {
-	return { type: UPDATE_LIST_STATE, current };
+export function updateListState(current, pageSize) {
+	return { type: UPDATE_LIST_STATE, current, pageSize };
 }
 
 export function deleteState() {

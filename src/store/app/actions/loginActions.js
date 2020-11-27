@@ -14,7 +14,7 @@ export function requestSuccess(payload) {
 }
 
 export function requestFailure(error) {
-	return { type: USER_LOGIN_FAILURE, error: error };
+	return { type: USER_LOGIN_FAILURE, error };
 }
 export function logout() {
 	return { type: USER_LOGOUT };

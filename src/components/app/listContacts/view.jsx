@@ -106,7 +106,10 @@ const View = (props) => {
 			renderItem={(item) => {
 				return (
 					<Col>
-						<CardContact user={item} id={data.indexOf(item)} />
+						<CardContact
+							user={item}
+							id={props.dataSource.indexOf(item)}
+						/>
 					</Col>
 				);
 			}}
@@ -116,10 +119,11 @@ const View = (props) => {
 				</div>
 			}
 			pagination={{
-				onChange: (page) => {
-					props.dispatchPage(page);
+				onChange: (page, size) => {
+					props.dispatchPage(page, size);
 				},
 				current: props.current,
+				pageSize: props.pageSize,
 				defaultPageSize: 6,
 				size: "small",
 				showSizeChanger: true,
